@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.fragment.FragmentModificaProdotto">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="DETTAGLIO PRODOTTO"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:id="@+id/titolo"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:hint="NAME:"
+        android:id="@+id/name"
+        android:layout_below="@+id/titolo"
+        android:textSize="15sp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:hint="DESCRIPTION:"
+        android:id="@+id/description"
+        android:layout_below="@+id/name"
+        android:textSize="15sp"
+        />
+
+
+</RelativeLayout>
