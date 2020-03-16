@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.activity.AddCardActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/main_toolbar"/>
+
+    <EditText
+        android:inputType="text"
+        android:id="@+id/editTxtNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="Nome prodotto"
+        android:layout_margin="30dp"/>
+
+    <EditText
+        android:inputType="text"
+        android:id="@+id/editTxtDescrizione"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="Descrizione prodotto"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:layout_marginTop="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/error"
+        android:textSize="20sp"
+        android:textColor="@android:color/holo_red_dark"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp">
+
+      <!--  <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginHorizontal="170dp"
+            android:background="#585858"
+            android:text="ADD"
+            android:textColor="@android:color/background_light"
+            android:textSize="25dp" /> -->
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
