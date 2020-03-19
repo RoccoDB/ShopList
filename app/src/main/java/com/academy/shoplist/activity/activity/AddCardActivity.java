@@ -1,9 +1,7 @@
 package com.academy.shoplist.activity.activity;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import android.view.View;
@@ -16,8 +14,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.academy.shoplist.R;
 import com.academy.shoplist.activity.bean.Prodotto;
-import com.academy.shoplist.activity.constant.Constant;
-import com.academy.shoplist.activity.singleton.ShopList;
+import com.academy.shoplist.activity.database.ShoplistDatabaseManager;
 import com.academy.shoplist.activity.utility.Utility;
 
 import java.util.HashMap;
@@ -59,13 +56,19 @@ public class AddCardActivity extends AppCompatActivity {
                 } else {
 
                     Prodotto p = new Prodotto(0, R.drawable.coffi, txtNome.getText().toString(), txtDescrizione.getText().toString());
-                    ShopList.getInstance().addProdottoToLista(p);
+                    //ShopList.getInstance().addProdottoToLista(p);
+                    ShoplistDatabaseManager.getInstance(AddCardActivity.this).addProdotto(p);
                     finish();
                 }
 
             }
+
+
+
         });
 
 
     }
 }
+
+

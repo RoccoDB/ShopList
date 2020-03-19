@@ -4,22 +4,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 
 import com.academy.shoplist.R;
 import com.academy.shoplist.activity.adapter.ProdottoAdapter;
-import com.academy.shoplist.activity.bean.Prodotto;
+import com.academy.shoplist.activity.database.ShoplistDatabaseManager;
+import com.academy.shoplist.activity.interfaces.OnItemClickListener;
 import com.academy.shoplist.activity.singleton.ShopList;
-import com.academy.shoplist.activity.singleton.ShoplistDatabaseManager;
 
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
+    private ProdottoAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private ImageView btnIntent;
 
@@ -29,17 +30,33 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ShoplistDatabaseManager.getInstance(MainActivity.this).addProdotto(new Prodotto(0, R.drawable.ic_launcher_background, "nome di test", "Descrizione di test"));
+
 
         mRecyclerView = findViewById(R.id.recyclerView);
         btnIntent = findViewById(R.id.aggiungi_product);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
-        mAdapter = new ProdottoAdapter(ShopList.getInstance().listaProdotti);
+        mAdapter = new ProdottoAdapter(ShoplistDatabaseManager.getInstance(MainActivity.this).getlistaProdottiByCursor(ShoplistDatabaseManager.getInstance(MainActivity.this).getAllProduct()));
         mRecyclerView.setLayoutManager(mLayoutManager);
-
         mRecyclerView.setAdapter(mAdapter);
 
+        mAdapter.setOnClickListener(new OnItemClickListener() {
+
+    @Override
+    public void onItemClick(int position) {
+
+    }
+
+    @Override
+    public void onItemDelete(int postion) {
+
+    }
+
+    @Override
+    public void onItemEdit(int position) {
+
+    }
+});
 
         btnIntent.setOnClickListener(new View.OnClickListener() {
             @Override

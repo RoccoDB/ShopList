@@ -1,12 +1,14 @@
 package com.academy.shoplist.activity.singleton;
 
+import android.database.Cursor;
+
 import com.academy.shoplist.activity.bean.Prodotto;
 
 import java.util.ArrayList;
 
 public class ShopList {
     private static  ShopList singleIstance = new ShopList();
-    public ArrayList<Prodotto> listaProdotti = new ArrayList<Prodotto>();
+    //public ArrayList<Prodotto> listaProdotti = new ArrayList<Prodotto>();
 
     private ShopList (){
 
@@ -19,8 +21,6 @@ public class ShopList {
             return singleIstance;
     }
 
-    public void addProdottoToLista (Prodotto p){
-        listaProdotti.add(p);
-    }
-
+    //public void addProdottoToLista (Prodotto p){ listaProdotti.add(p);
+   // }
 }
