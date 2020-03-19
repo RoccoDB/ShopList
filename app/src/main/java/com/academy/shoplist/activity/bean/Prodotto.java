@@ -6,7 +6,9 @@ public class Prodotto {
     private String nome;
     private String descrizione;
 
-    public Prodotto(){}
+    public Prodotto (){
+
+    }
 
     public Prodotto(int id, int immagine, String nome, String descrizione) {
         this.id = id;

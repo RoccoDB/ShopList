@@ -18,9 +18,10 @@ import androidx.recyclerview.widget.RecyclerView;
 public class ProdottoAdapter extends RecyclerView.Adapter<ProdottoAdapter.ProdottoViewHolder> {
     public OnItemClickListener listener;
 
-    public void setOnClickListener (OnItemClickListener listener) {
+    public void setOnItemClickListener (OnItemClickListener listener) {
         this.listener = listener;
     }
+
 
     private  ArrayList<Prodotto> prodottiList = new ArrayList<>();
 

@@ -7,20 +7,22 @@ import com.academy.shoplist.activity.bean.Prodotto;
 import java.util.ArrayList;
 
 public class ShopList {
-    private static  ShopList singleIstance = new ShopList();
-    //public ArrayList<Prodotto> listaProdotti = new ArrayList<Prodotto>();
+    private static ShopList singleIstance = new ShopList();
+    // public ArrayList<Prodotto> listaProdotti = new ArrayList<Prodotto>();
 
-    private ShopList (){
+    private ShopList() {
 
     }
 
     public static ShopList getInstance() {
-        if (singleIstance==null)
+        if (singleIstance == null)
             return singleIstance = new ShopList();
         else
             return singleIstance;
     }
 
-    //public void addProdottoToLista (Prodotto p){ listaProdotti.add(p);
-   // }
+    // public void addProdottoToLista (Prodotto p){
+    //add the item
+    //listaProdotti.add(p);
+    // }
 }
