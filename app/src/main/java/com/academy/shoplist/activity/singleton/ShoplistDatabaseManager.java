@@ -60,5 +60,12 @@ public class ShoplistDatabaseManager extends DatabaseManager {
     public Cursor getAllProduct (){
         return database.query(DbConstant.PRODOTTI_TABLE,null,null,null,null,null,null);
     }
-
+    public void eliminaProdottoByNome (String nome){
+        database.delete(DbConstant.PRODOTTI_TABLE, DbConstant.PRODOTTI_TABLE_NOME+"='"+nome+"'", null);
+    }
+    public void modificaProdottoByNome (String nome, Prodotto p){
+        ContentValues values = new ContentValues();
+        values.put(DbConstant.PRODOTTI_TABLE_DESCRIZIONE, p.getDescrizione());
+        database.update(DbConstant.PRODOTTI_TABLE, values, DbConstant.PRODOTTI_TABLE_NOME+"='"+nome+"'", null );
+    }
 }

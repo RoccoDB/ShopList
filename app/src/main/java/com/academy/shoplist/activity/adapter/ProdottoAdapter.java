@@ -23,7 +23,7 @@ public class ProdottoAdapter extends RecyclerView.Adapter<ProdottoAdapter.Prodot
     }
 
 
-    private  ArrayList<Prodotto> prodottiList = new ArrayList<>();
+    public  ArrayList<Prodotto> prodottiList = new ArrayList<>();
 
     public static class ProdottoViewHolder extends RecyclerView.ViewHolder{
         public ImageView img_Prodotto;

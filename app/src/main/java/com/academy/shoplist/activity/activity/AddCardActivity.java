@@ -2,6 +2,7 @@ package com.academy.shoplist.activity.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.view.View;
@@ -24,7 +25,7 @@ public class AddCardActivity extends AppCompatActivity {
     EditText txtNome;
     EditText txtDescrizione;
     TextView errore;
-
+    private ImageView btnIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +33,11 @@ public class AddCardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_card);
         btnAddCard = findViewById(R.id.aggiungi_product);
         txtNome = findViewById(R.id.editTxtNome);
+        btnIntent = findViewById(R.id.aggiungi_product);
         txtDescrizione = findViewById(R.id.editTxtDescrizione);
         errore = findViewById(R.id.error);
         setActionBar();
+
 
     }
 
@@ -56,7 +59,6 @@ public class AddCardActivity extends AppCompatActivity {
                 } else {
 
                     Prodotto p = new Prodotto(0, R.drawable.coffi, txtNome.getText().toString(), txtDescrizione.getText().toString());
-                    //ShopList.getInstance().addProdottoToLista(p);
                     ShoplistDatabaseManager.getInstance(AddCardActivity.this).addProdotto(p);
                     finish();
                 }
@@ -69,6 +71,9 @@ public class AddCardActivity extends AppCompatActivity {
 
 
     }
+
+
+
 }
 
 
