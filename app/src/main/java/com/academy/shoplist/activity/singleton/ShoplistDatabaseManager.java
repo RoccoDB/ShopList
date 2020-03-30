@@ -1,4 +1,5 @@
 package com.academy.shoplist.activity.singleton;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -73,9 +74,8 @@ public class ShoplistDatabaseManager extends DatabaseManager {
         database.update(DbConstant.PRODOTTI_TABLE, values, DbConstant.PRODOTTI_TABLE_NOME + "='" + nome + "'", null);
     }
 
-   // public void dettaglioProdottoByNome(String nome) {
-     //   ContentValues values = new ContentValues();
-       // values.put(DbConstant.PRODOTTI_TABLE_DESCRIZIONE.to);
-        //database.update(DbConstant.PRODOTTI_TABLE, values, DbConstant.PRODOTTI_TABLE_NOME + "='" + nome + "'", null);
-    //}
+    public void dettaglioProdottoByNome(String nome, Prodotto p){
+        ContentValues values = new ContentValues();
+        database.update(DbConstant.PRODOTTI_TABLE, values, DbConstant.PRODOTTI_TABLE_NOME + "='" + nome + "'", null);
+    }
 }

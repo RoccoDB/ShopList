@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentDettaglio"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.fragment.FragmentDettaglioProdotto">
@@ -20,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:text="NAME:"
-        android:id="@+id/name"
+        android:id="@+id/dettaglioNome"
         android:layout_below="@+id/titolo"
         android:textSize="15sp"/>
     <TextView
@@ -28,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:text="DESCRIPTION:"
-        android:id="@+id/description"
+        android:id="@+id/dettaglioDescrizione"
         android:layout_below="@+id/name"
         android:textSize="15sp"/>
 

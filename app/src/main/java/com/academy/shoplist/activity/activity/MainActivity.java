@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -13,6 +14,7 @@ import android.widget.ImageView;
 import com.academy.shoplist.R;
 import com.academy.shoplist.activity.adapter.ProdottoAdapter;
 import com.academy.shoplist.activity.bean.Prodotto;
+import com.academy.shoplist.activity.constant.Constant;
 import com.academy.shoplist.activity.constant.DbConstant;
 import com.academy.shoplist.activity.fragment.FragmentDettaglioProdotto;
 import com.academy.shoplist.activity.interfaces.OnItemClickListener;
@@ -65,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 Prodotto p = new Prodotto();
                 p = mAdapter.prodottiList.get(position);
                 intentDetail.putExtra("position", position);
+                intentDetail.putExtra("modalità di apertura", Constant.VISUALIZZA);
                 startActivityForResult(intentDetail, 2);
             }
 
@@ -80,6 +83,10 @@ public class MainActivity extends AppCompatActivity {
             public void onItemEdit(int position) {
                 Prodotto p = new Prodotto();
                 ShoplistDatabaseManager.getInstance(MainActivity.this).modificaProdottoByNome(p.getNome(), p);
+                Intent intentEdit = new Intent(MainActivity.this, ActivityProdotto.class);
+                intentEdit.putExtra("position", position);
+                intentEdit.putExtra("modalità di apertura", Constant.MODIFICA);
+                startActivityForResult(intentEdit, 3);
             }
         });
     }

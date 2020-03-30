@@ -48,6 +48,8 @@ public class FragmentDettaglioProdotto extends Fragment {
         nomeProdotto = v.findViewById(R.id.name);
         descrizioneProdotto = v.findViewById(R.id.description);
         return v ;
-
     }
+
+
+
 }

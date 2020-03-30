@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="DETTAGLIO PRODOTTO"
+        android:text="MODIFICA PRODOTTO"
         android:textSize="30sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:hint="NAME:"
-        android:id="@+id/name"
+        android:id="@+id/editName"
         android:layout_below="@+id/titolo"
         android:textSize="15sp"
         />
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:hint="DESCRIPTION:"
-        android:id="@+id/description"
+        android:id="@+id/editDescription"
         android:layout_below="@+id/name"
         android:textSize="15sp"
         />
