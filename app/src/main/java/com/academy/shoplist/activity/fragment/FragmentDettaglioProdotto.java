@@ -46,7 +46,7 @@ public class FragmentDettaglioProdotto extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_dettaglio_prodotto, container, false);
         nomeProdotto = v.findViewById(R.id.name);
-        descrizioneProdotto = v.findViewById(R.id.description);
+        descrizioneProdotto = v.findViewById(R.id.dettaglioDescrizione);
         return v ;
     }
 

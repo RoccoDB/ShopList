@@ -7,6 +7,6 @@ public class Constant {
 
     public static final String POSIZIONE_DETTAGLIO_PRODOTTO = "POSIZIONE PRODOTTO";
     public static final String MODALITA_APERTURA = "MODALITA APERTURA";
-    public static final int VISUALIZZA = 1 ;
+    public static final int VISUALIZZA = 1;
     public static final int MODIFICA = 2;
 }

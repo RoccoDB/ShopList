@@ -74,8 +74,7 @@ public class ShoplistDatabaseManager extends DatabaseManager {
         database.update(DbConstant.PRODOTTI_TABLE, values, DbConstant.PRODOTTI_TABLE_NOME + "='" + nome + "'", null);
     }
 
-    public void dettaglioProdottoByNome(String nome, Prodotto p){
-        ContentValues values = new ContentValues();
-        database.update(DbConstant.PRODOTTI_TABLE, values, DbConstant.PRODOTTI_TABLE_NOME + "='" + nome + "'", null);
+    public Cursor getProdottoByNome(String nome){
+        return database.query(DbConstant.PRODOTTI_TABLE, null, DbConstant.PRODOTTI_TABLE_NOME + "='" + nome + "'", null, null, null, null);
     }
 }

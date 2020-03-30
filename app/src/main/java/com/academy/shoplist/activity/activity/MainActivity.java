@@ -10,6 +10,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.academy.shoplist.R;
 import com.academy.shoplist.activity.adapter.ProdottoAdapter;
@@ -27,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private ProdottoAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private ImageView btnIntent;
-
+    private TextView txtNome;
+    private TextView txtDescrizione;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
+        txtNome = findViewById(R.id.nome_prodotto);
+        txtDescrizione = findViewById(R.id.descrizione_prodotto);
         generaAdapter();
         btnIntent.setOnClickListener(new View.OnClickListener() {
             @Override
