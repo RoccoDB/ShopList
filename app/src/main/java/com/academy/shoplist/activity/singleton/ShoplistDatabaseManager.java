@@ -43,12 +43,13 @@ public class ShoplistDatabaseManager extends DatabaseManager {
             database.endTransaction();
         }
     }
-    public ArrayList<Prodotto> getListaProdottiByCursor (Cursor c){
+
+    public ArrayList<Prodotto> getListaProdottiByCursor(Cursor c) {
         ArrayList<Prodotto> listaProdotti = new ArrayList<>();
-        int columnIndexNome=c.getColumnIndex(DbConstant.PRODOTTI_TABLE_NOME);
-        int columnIndexDescrizione=c.getColumnIndex(DbConstant.PRODOTTI_TABLE_DESCRIZIONE);
-        int columnIndexImmagine=c.getColumnIndex(DbConstant.PRODOTTI_TABLE_IMG);
-        while(c.moveToNext()) {
+        int columnIndexNome = c.getColumnIndex(DbConstant.PRODOTTI_TABLE_NOME);
+        int columnIndexDescrizione = c.getColumnIndex(DbConstant.PRODOTTI_TABLE_DESCRIZIONE);
+        int columnIndexImmagine = c.getColumnIndex(DbConstant.PRODOTTI_TABLE_IMG);
+        while (c.moveToNext()) {
             Prodotto p = new Prodotto();
             p.setNome(c.getString(columnIndexNome));
             p.setDescrizione(c.getString(columnIndexDescrizione));
@@ -57,15 +58,24 @@ public class ShoplistDatabaseManager extends DatabaseManager {
         }
         return listaProdotti;
     }
-    public Cursor getAllProduct (){
-        return database.query(DbConstant.PRODOTTI_TABLE,null,null,null,null,null,null);
+
+    public Cursor getAllProduct() {
+        return database.query(DbConstant.PRODOTTI_TABLE, null, null, null, null, null, null);
     }
-    public void eliminaProdottoByNome (String nome){
-        database.delete(DbConstant.PRODOTTI_TABLE, DbConstant.PRODOTTI_TABLE_NOME+"='"+nome+"'", null);
+
+    public void eliminaProdottoByNome(String nome) {
+        database.delete(DbConstant.PRODOTTI_TABLE, DbConstant.PRODOTTI_TABLE_NOME + "='" + nome + "'", null);
     }
-    public void modificaProdottoByNome (String nome, Prodotto p){
+
+    public void modificaProdottoByNome(String nome, Prodotto p) {
         ContentValues values = new ContentValues();
         values.put(DbConstant.PRODOTTI_TABLE_DESCRIZIONE, p.getDescrizione());
-        database.update(DbConstant.PRODOTTI_TABLE, values, DbConstant.PRODOTTI_TABLE_NOME+"='"+nome+"'", null );
+        database.update(DbConstant.PRODOTTI_TABLE, values, DbConstant.PRODOTTI_TABLE_NOME + "='" + nome + "'", null);
     }
+
+   // public void dettaglioProdottoByNome(String nome) {
+     //   ContentValues values = new ContentValues();
+       // values.put(DbConstant.PRODOTTI_TABLE_DESCRIZIONE.to);
+        //database.update(DbConstant.PRODOTTI_TABLE, values, DbConstant.PRODOTTI_TABLE_NOME + "='" + nome + "'", null);
+    //}
 }

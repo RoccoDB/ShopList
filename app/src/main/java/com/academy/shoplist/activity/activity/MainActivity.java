@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intentDetail = new Intent(MainActivity.this, ActivityProdotto.class);
                 Prodotto p = new Prodotto();
                 p = mAdapter.prodottiList.get(position);
-                intentDetail.putExtra(ShoplistDatabaseManager.getInstance(MainActivity.this));
+                intentDetail.putExtra("position", position);
                 startActivityForResult(intentDetail, 2);
             }
 

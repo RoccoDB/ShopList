@@ -30,6 +30,7 @@ public class ProdottoAdapter extends RecyclerView.Adapter<ProdottoAdapter.Prodot
         public ImageView img_elimina_prodotto;
         public TextView textView_nomeProdotto;
         public TextView textView_descrizioneProdotto;
+        public ImageView img_modifica;
 
 
 
@@ -37,6 +38,7 @@ public class ProdottoAdapter extends RecyclerView.Adapter<ProdottoAdapter.Prodot
             super(itemView);
             img_Prodotto = itemView.findViewById(R.id.img_prodotto);
             img_elimina_prodotto = itemView.findViewById(R.id.elimina_prodotto);
+            img_modifica = itemView.findViewById(R.id.modifica_prodotto);
             textView_nomeProdotto = itemView.findViewById(R.id.nome_prodotto);
             textView_descrizioneProdotto = itemView.findViewById(R.id.descrizione_prodotto);
 
@@ -58,6 +60,17 @@ public class ProdottoAdapter extends RecyclerView.Adapter<ProdottoAdapter.Prodot
                         int position = getAdapterPosition();
                         if (position != RecyclerView.NO_POSITION) {
                             listener.onItemDelete(position);
+                        }
+                    }
+                }
+            });
+            img_modifica.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(listener != null){
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            listener.onItemEdit(position);
                         }
                     }
                 }
