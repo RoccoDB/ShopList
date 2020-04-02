@@ -77,4 +77,9 @@ public class ShoplistDatabaseManager extends DatabaseManager {
     public Cursor getProdottoByNome(String nome){
         return database.query(DbConstant.PRODOTTI_TABLE, null, DbConstant.PRODOTTI_TABLE_NOME + "='" + nome + "'", null, null, null, null);
     }
+
+    public Cursor getProdottoByDescrizione(String descrizione){
+        return database.query(DbConstant.PRODOTTI_TABLE, null, DbConstant.PRODOTTI_TABLE_DESCRIZIONE + "='" + descrizione + "'", null, null, null, null);
+    }
+
 }

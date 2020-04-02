@@ -16,8 +16,8 @@ import com.academy.shoplist.R;
 public class FragmentModificaProdotto extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private static final String ARG_PARAM1 = "nome";
+    private static final String ARG_PARAM2 = "descrizione";
 
     // TODO: Rename and change types of parameters
     private String nome;
@@ -41,8 +41,8 @@ public class FragmentModificaProdotto extends Fragment {
         super.onCreate(savedInstanceState);
 
         if (getArguments() != null) {
-            nome = getArguments().getString(txtNome.toString());
-            descrizione = getArguments().getString(txtDescrizione.toString());
+            nome = getArguments().getString(ARG_PARAM1);
+            descrizione = getArguments().getString(ARG_PARAM2);
             newInstance(nome, descrizione);
         }
     }
@@ -53,6 +53,9 @@ public class FragmentModificaProdotto extends Fragment {
         View v = inflater.inflate(R.layout.fragment_modifica_prodotto, container, false);
         txtNome = v.findViewById(R.id.nome_prodotto);
         txtDescrizione = v.findViewById(R.id.descrizione_prodotto);
+        txtNome.setText(nome);
+        txtDescrizione.setText(descrizione);
+
         return v;
     }
 
