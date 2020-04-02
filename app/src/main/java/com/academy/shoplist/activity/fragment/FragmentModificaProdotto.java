@@ -22,7 +22,7 @@ public class FragmentModificaProdotto extends Fragment {
     // TODO: Rename and change types of parameters
     private String nome;
     private String descrizione;
-    private EditText txtNome;
+    private TextView txtNome;
     private EditText txtDescrizione;
 
 
@@ -51,8 +51,8 @@ public class FragmentModificaProdotto extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_modifica_prodotto, container, false);
-        txtNome = v.findViewById(R.id.nome_prodotto);
-        txtDescrizione = v.findViewById(R.id.descrizione_prodotto);
+        txtNome = v.findViewById(R.id.editName);
+        txtDescrizione = v.findViewById(R.id.editDescription);
         txtNome.setText(nome);
         txtDescrizione.setText(descrizione);
 

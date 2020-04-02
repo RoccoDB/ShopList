@@ -30,7 +30,7 @@
         android:layout_marginTop="25dp"
         android:text="DESCRIPTION:"
         android:id="@+id/dettaglioDescrizione"
-        android:layout_below="@+id/name"
+        android:layout_below="@+id/dettaglioNome"
         android:textSize="15sp"/>
 
 

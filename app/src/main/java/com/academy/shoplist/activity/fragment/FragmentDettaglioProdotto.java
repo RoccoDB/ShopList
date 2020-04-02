@@ -20,6 +20,8 @@ public class FragmentDettaglioProdotto extends Fragment {
     // TODO: Rename and change types of parameters
     TextView nomeProdotto;
     TextView descrizioneProdotto;
+    String nome;
+    String descrizione;
 
     // TODO: Rename and change types and number of parameters
     public static FragmentDettaglioProdotto newInstance(String param1, String param2) {
@@ -34,19 +36,22 @@ public class FragmentDettaglioProdotto extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            String mParam1 = getArguments().getString(ARG_PARAM1);
-            String mParam2 = getArguments().getString(ARG_PARAM2);
+        if (getArguments() != null)
+            nome = getArguments().getString(ARG_PARAM1);
+            descrizione = getArguments().getString(ARG_PARAM2);
+            newInstance(nome, descrizione);
         }
-    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_dettaglio_prodotto, container, false);
-        nomeProdotto = v.findViewById(R.id.name);
+        nomeProdotto = v.findViewById(R.id.dettaglioNome);
         descrizioneProdotto = v.findViewById(R.id.dettaglioDescrizione);
+        nomeProdotto.setText(nome);
+        descrizioneProdotto.setText(descrizione);
         return v ;
     }
 
