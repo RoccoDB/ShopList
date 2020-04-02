@@ -23,9 +23,9 @@ public class Utility {
         return mapError;
     }
 
-    public static HashMap<Boolean, String> validaDescrizione(EditText editX) {
+    public static HashMap<Boolean, String> validaDescrizione(String editX) {
         HashMap<Boolean, String> mapError = new HashMap<>();
-        if (TextUtils.isEmpty(editX.getText().toString())) {
+        if (TextUtils.isEmpty(editX)) {
             mapError.put(Boolean.FALSE, "Manca la descrizione del prodotto");
         }
         return mapError;

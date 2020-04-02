@@ -41,7 +41,6 @@ public class ProdottoAdapter extends RecyclerView.Adapter<ProdottoAdapter.Prodot
             img_modifica = itemView.findViewById(R.id.modifica_prodotto);
             textView_nomeProdotto = itemView.findViewById(R.id.nome_prodotto);
             textView_descrizioneProdotto = itemView.findViewById(R.id.descrizione_prodotto);
-
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

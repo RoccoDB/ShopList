@@ -36,22 +36,13 @@
         android:textSize="15sp"
         />
 
-    <Button
-        android:id="@+id/editButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editDescription"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="34dp"
-        android:text="Button" />
-
     <TextView
         android:layout_marginTop="20sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/errorF"
         android:textSize="20sp"
-        android:layout_below="@+id/editButton"
+        android:layout_below="@+id/editDescription"
         android:textColor="@android:color/holo_red_dark"/>
 
 

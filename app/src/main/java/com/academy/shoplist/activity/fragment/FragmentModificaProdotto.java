@@ -4,6 +4,8 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +13,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.academy.shoplist.R;
+import com.academy.shoplist.activity.interfaces.FragmentInterface;
+import com.academy.shoplist.activity.interfaces.OnItemClickListener;
+import com.academy.shoplist.activity.singleton.ShoplistDatabaseManager;
 
 
-public class FragmentModificaProdotto extends Fragment {
+public class FragmentModificaProdotto extends Fragment implements FragmentInterface {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "nome";
@@ -24,7 +29,10 @@ public class FragmentModificaProdotto extends Fragment {
     private String descrizione;
     private TextView txtNome;
     private EditText txtDescrizione;
-
+    private FragmentInterface listener;
+    public void setListener (FragmentInterface listener) {
+        this.listener = listener;
+    }
 
     // TODO: Rename and change types and number of parameters
     public static FragmentModificaProdotto newInstance(String nome, String descrizione) {
@@ -55,8 +63,25 @@ public class FragmentModificaProdotto extends Fragment {
         txtDescrizione = v.findViewById(R.id.editDescription);
         txtNome.setText(nome);
         txtDescrizione.setText(descrizione);
+        txtDescrizione.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+                String descrizione = s.toString();
+                listener.catchDescrizione(descrizione);
+            }
+        });
         return v;
     }
 
+    @Override
+    public void catchDescrizione(String descrizione) {
+    }
 }

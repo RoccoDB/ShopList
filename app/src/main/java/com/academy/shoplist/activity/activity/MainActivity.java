@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemEdit(int position) {
                 Prodotto p = new Prodotto();
-                ShoplistDatabaseManager.getInstance(MainActivity.this).getProdottoByNome(p.getNome());
+                ShoplistDatabaseManager.getInstance(MainActivity.this).modificaProdottoByNome(p.getNome(), p);
                 Intent intentEdit = new Intent(MainActivity.this, ActivityProdotto.class);
                 intentEdit.putExtra("position", position);
                 intentEdit.putExtra("modalità di apertura", Constant.MODIFICA);

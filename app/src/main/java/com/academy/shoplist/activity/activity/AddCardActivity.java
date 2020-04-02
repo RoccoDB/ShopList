@@ -53,6 +53,7 @@ public class AddCardActivity extends AppCompatActivity {
         addImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 HashMap<Boolean, String> mapError = Utility.validaInput(txtNome, txtDescrizione);
                 if (mapError.containsKey(Boolean.FALSE)) {
                     errore.setText(mapError.get(Boolean.FALSE));
