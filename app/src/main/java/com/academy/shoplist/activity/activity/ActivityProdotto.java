@@ -89,7 +89,9 @@ public class ActivityProdotto extends AppCompatActivity{
         setSupportActionBar(myToolbar);
         ImageView addImage = (ImageView) findViewById(R.id.aggiungi_product);
         ImageView back = (ImageView) findViewById(R.id.back_toolbar);
+        TextView shopList = (TextView) findViewById(R.id.textViewShopList);
         TextView testoToolbar = (TextView) findViewById(R.id.textViewTitolo);
+        shopList.setVisibility(View.INVISIBLE);
         if(bundle.getInt("modalità di apertura", 0) == Constant.MODIFICA){
             addImage.setVisibility(View.VISIBLE);
             testoToolbar.setText("MODIFICA PRODOTTO");

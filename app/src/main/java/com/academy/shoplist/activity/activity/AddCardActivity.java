@@ -48,6 +48,8 @@ public class AddCardActivity extends AppCompatActivity {
         ImageView back = (ImageView) findViewById(R.id.back_toolbar);
         TextView testoToolbar = (TextView) findViewById(R.id.textViewTitolo);
         testoToolbar.setText("AGGIUNGI PRODOTTO");
+        TextView shopList = (TextView) findViewById(R.id.textViewShopList);
+        shopList.setVisibility(View.INVISIBLE);
         addImage.setVisibility(View.VISIBLE);
         back.setVisibility(View.VISIBLE);
 

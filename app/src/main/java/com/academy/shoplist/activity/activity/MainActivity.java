@@ -2,6 +2,7 @@ package com.academy.shoplist.activity.activity;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,6 +22,9 @@ import com.academy.shoplist.activity.fragment.FragmentDettaglioProdotto;
 import com.academy.shoplist.activity.interfaces.OnItemClickListener;
 import com.academy.shoplist.activity.singleton.ShopList;
 import com.academy.shoplist.activity.singleton.ShoplistDatabaseManager;
+import com.academy.shoplist.activity.utility.Utility;
+
+import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
 

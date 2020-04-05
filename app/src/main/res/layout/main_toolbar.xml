@@ -21,6 +21,17 @@
             />
 
         <TextView
+            android:id="@+id/textViewShopList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="20sp"
+            android:text="SHOP LIST"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical"
+            />
+
+        <TextView
             android:id="@+id/textViewTitolo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

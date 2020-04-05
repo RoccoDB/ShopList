@@ -10,7 +10,7 @@
         android:layout_height="100dp"
         android:id="@+id/visualizza_img"
         android:layout_marginTop="0dp"
-        android:src="@drawable/coffi"/>
+        android:src="@drawable/ic_edit_black_24dp"/>
 
     <TextView
         android:layout_width="wrap_content"
