@@ -50,6 +50,14 @@ public class AddCardActivity extends AppCompatActivity {
         testoToolbar.setText("AGGIUNGI PRODOTTO");
         addImage.setVisibility(View.VISIBLE);
         back.setVisibility(View.VISIBLE);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         addImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

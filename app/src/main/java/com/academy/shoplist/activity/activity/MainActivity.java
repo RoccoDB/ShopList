@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent2ndActivity, 1);
             }
         });
-
     }
 
     @Override

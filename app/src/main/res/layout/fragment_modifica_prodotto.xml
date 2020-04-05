@@ -5,34 +5,56 @@
     android:layout_height="match_parent"
     tools:context=".activity.fragment.FragmentModificaProdotto">
 
-    <TextView
+    <ImageView
         android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/visualizza_img"
+        android:layout_marginTop="0dp"
+        android:src="@drawable/coffi"/>
+
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="MODIFICA PRODOTTO"
-        android:textSize="30sp"
+        android:layout_margin="25dp"
+        android:text="NOME: "
         android:textStyle="bold"
-        android:gravity="center"
-        android:id="@+id/titolo"
-        />
+        android:id="@+id/Nome"
+        android:layout_gravity="center"
+        android:layout_below="@+id/visualizza_img"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:text="NAME:"
+        android:id="@+id/editName"
+        android:textColor="@android:color/holo_orange_dark"
+        android:layout_gravity="center"
+        android:layout_below="@+id/Nome"
+        android:textSize="15sp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:hint="NAME:"
-        android:id="@+id/editName"
-        android:layout_below="@+id/titolo"
-        android:textSize="15sp"
-        />
+        android:layout_margin="25dp"
+        android:text="DESCRIZIONE: "
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:id="@+id/Descrizione"
+        android:layout_below="@+id/editName"
+        android:textSize="20sp"/>
 
     <EditText
+        android:textColor="@android:color/holo_orange_dark"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
         android:hint="DESCRIPTION:"
         android:id="@+id/editDescription"
-        android:layout_below="@+id/editName"
+        android:layout_below="@+id/Descrizione"
         android:textSize="15sp"
         />
 

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".activity.activity.AddCardActivity"
     android:layout_width="match_parent"
@@ -8,6 +7,13 @@
     android:orientation="vertical">
 
     <include layout="@layout/main_toolbar"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/carrello"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/add_shop"/>
 
     <EditText
         android:inputType="text"
@@ -42,9 +48,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp">
 
-
-
     </LinearLayout>
-
-
+    
 </LinearLayout>

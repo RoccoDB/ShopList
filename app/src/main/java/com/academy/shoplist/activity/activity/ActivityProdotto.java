@@ -38,6 +38,7 @@ public class ActivityProdotto extends AppCompatActivity{
     TextView txtNome;
     String  nome;
     String descrizioneProdotto;
+    String descrizione;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +56,7 @@ public class ActivityProdotto extends AppCompatActivity{
         int posizione = bundle.getInt("position", 0);
         ArrayList<Prodotto> listaProdotti = ShoplistDatabaseManager.getInstance(ActivityProdotto.this).getListaProdottiByCursor(ShoplistDatabaseManager.getInstance(ActivityProdotto.this).getAllProduct());
         nome = listaProdotti.get(posizione).getNome();
-        String descrizione = listaProdotti.get(posizione).getDescrizione();
+        descrizione = listaProdotti.get(posizione).getDescrizione();
 
         if (bundle.getInt("modalità di apertura", 0) == Constant.VISUALIZZA) {
             FragmentDettaglioProdotto fragmentDettaglio = FragmentDettaglioProdotto.newInstance(nome, descrizione);
@@ -90,13 +91,22 @@ public class ActivityProdotto extends AppCompatActivity{
         ImageView back = (ImageView) findViewById(R.id.back_toolbar);
         TextView testoToolbar = (TextView) findViewById(R.id.textViewTitolo);
         if(bundle.getInt("modalità di apertura", 0) == Constant.MODIFICA){
+            addImage.setVisibility(View.VISIBLE);
             testoToolbar.setText("MODIFICA PRODOTTO");
         }else if(bundle.getInt("modalità di apertura", 0) == Constant.VISUALIZZA){
+            addImage.setVisibility(View.INVISIBLE);
             testoToolbar.setText("VISUALIZZA PRODOTTO");
         }
 
-        addImage.setVisibility(View.VISIBLE);
         back.setVisibility(View.VISIBLE);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         addImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -105,7 +115,6 @@ public class ActivityProdotto extends AppCompatActivity{
                     errore.setText(mapError.get(Boolean.FALSE));
                 } else {
                     Prodotto p = new Prodotto();
-                    p.setNome(nome);
                     p.setDescrizione(descrizioneProdotto);
                     ShoplistDatabaseManager.getInstance(ActivityProdotto.this).modificaProdottoByNome(nome, p);
                     finish();
